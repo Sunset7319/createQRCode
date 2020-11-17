@@ -3,15 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>生成二维码</title>
-<script src="https://lib.baomitu.com/jquery/3.5.0/jquery.js"></script>
-<!-- 生成二维码jquery.qrcode.min.js-->
-<script src="https://files.cnblogs.com/files/kitty-blog/jquery.qrcode.min.js"></script>
-<!-- <script type="text/javascript" src="./jquery.qrcode.min.js"></script> -->
-<!-- 获取excel表格数据-->
-<script src="https://blog-static.cnblogs.com/files/xieyongbin/xlsx.full.min.js"></script>
-<!-- zip压缩包依赖-->
-<script src="https://files.cnblogs.com/files/kitty-blog/jszip.min.js"></script>
-<script src="https://files.cnblogs.com/files/kitty-blog/FileSaver.js"></script>
 <style>
 	table,th,td { border:1px solid blue; }
 </style>
@@ -20,6 +11,7 @@
 	<span>二维码：长<input id="codeWidth" type="text" value="100" style="width:30px" />px</span>
 	<span style="margin-right: 30px;"></span>
 	<span>宽<input id="codeHeight" type="text" value="100" style="width:30px" />px</span>
+	<span style="margin-right: 30px;"></span>
 	<span>域名</span><input id="domainName" type="text" value="http://www.baidu.com/" style="width:300px" />
 	<br />
 	<hr />
@@ -40,7 +32,15 @@
 	<input type="file" id="file"/>
 	
 	<table id="table" style="display: none;"></table>
-  <button type="button" onclick="download()">下载zip</button>
+	<button type="button" onclick="download()">下载zip</button>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<!-- 生成二维码jquery.qrcode.min.js-->
+	<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+	<!-- 获取excel表格数据-->
+	<script type="text/javascript" src="js/xlsx.full.min.js"></script>
+	<!-- zip压缩包依赖-->
+	<script type="text/javascript" src="js/jszip.min.js"></script>
+	<script type="text/javascript" src="js/FileSaver.js"></script>
 	<script>
 		//jquery-qrcode不支持中文,改变一下编码就支持了！
 		function utf16to8(str) {
